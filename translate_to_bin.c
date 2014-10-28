@@ -1,3 +1,8 @@
+/* Translating number from dec to bin 
+   First task in 1st semester  (bit operations)
+   Yumatov Vladimir 
+*/
+
 #include <stdio.h>
 
 int main(void) {

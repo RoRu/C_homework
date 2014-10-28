@@ -1,3 +1,8 @@
+/* Raising a number "a" to the power "n"  
+   First task in 1st semester (bit operations)
+   Yumatov Vladimir 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
