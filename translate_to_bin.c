@@ -14,7 +14,7 @@ int main(void) {
 
     int i = 0;
     for (i = bits; i > 0; i--)
-        printf("%c",((num >> i-1) & 1) ? '1':'0');
+        printf("%d",!!((num >> i-1) & 1));
 
     return 0;
 }
