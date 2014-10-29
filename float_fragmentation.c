@@ -24,7 +24,7 @@ int main(void) {
     scanf("%f", &f);
 
     int intf = 0;
-    
+
     int k = 0;
     while((k != 1) && (k != 2)) {
         printf("Choose the way to translate:\n1. Pointers (enter 1)\n2. Union (enter 2)\n");
@@ -49,12 +49,12 @@ int main(void) {
 
     int exp = (intf >> 23) & 0xFF;
 
-    float frac = 0,
+    float frac = 1,
           t = 0.5;
     int i = 0;
     for(i = 22, t = 0.5; i >= 0; i--, t /= 2) {
         frac += !!((intf >> i) & 1) * t;
     }
-    printf("Sign = %d\nExponent = %d\nFraction = %f", sign, exp, frac);
+    printf("%c%f * 2^%d", sign ? '-' : '+', frac, exp-127);
     return 0;
 }
