@@ -23,29 +23,35 @@ int main(void) {
     float f;
     scanf("%f", &f);
 
-    printf("Choose the way to translate:\n1. Pointers (enter 1)\n2. Union (enter any other number)\n");
-    int dec = 0,
-        intf = 0;
-    scanf("%d", &dec);
-    if(dec == 1) {
-        intf = bitFloatToInt1(f);
-    }
-    else {
-        intf = bitFloatToInt2(f);
+    int intf = 0;
+    
+    int k = 0;
+    while((k != 1) && (k != 2)) {
+        printf("Choose the way to translate:\n1. Pointers (enter 1)\n2. Union (enter 2)\n");
+        scanf("%d", &k);
+        switch (k) {
+            case 1: {
+                intf = bitFloatToInt1(f);
+                break;
+            }
+            case 2: {
+                intf = bitFloatToInt2(f);
+                break;
+            }
+            default: {
+                printf("Enter 1 or 2\n");
+            }
+        }
     }
 
 
     int sign = !!(intf >> 31);
 
-    int exp = 0,
-        i = 0,
-        k = 1;
-    for(i = 23, k = 1; i < 31; i++, k *= 2) {
-        exp += !!((intf >> i) & 1) * k;
-    }
+    int exp = (intf >> 23) & 0xFF;
 
     float frac = 0,
           t = 0.5;
+    int i = 0;
     for(i = 22, t = 0.5; i >= 0; i--, t /= 2) {
         frac += !!((intf >> i) & 1) * t;
     }
