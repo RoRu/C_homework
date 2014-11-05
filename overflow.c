@@ -1,0 +1,23 @@
+/*
+Buffer overflow
+Author: Yumatov Vladimir, group 171
+*/
+#include <stdio.h>
+
+void foo1() {
+    char buff[2];
+    printf("\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n");
+    scanf("%s", buff);
+    printf("\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n0x%p\n");
+}
+
+int foo2() {
+    printf("SUCCESS");
+    exit(1);
+}
+
+int main() {
+    printf("foo1: 0x%X\nfoo2: 0x%X\nmain: 0x%X\n", &foo1, &foo2, &main);
+    foo1();
+    return 0;
+}
