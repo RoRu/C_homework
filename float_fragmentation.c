@@ -19,7 +19,7 @@ int main(void) {
     float t = 0,
           mant = 0;
     for(i = 22, t = 0.5; i >= 0; i--, t /= 2) {
-        mant += !!((fragm.bitField.mantissa >> i) & 1) * t;
+        mant += ((fragm.bitField.mantissa >> i) & 1) * t;
     }
 
     printf("Sign = %d\nExponent = %d\nFraction = %f", fragm.bitField.sign, fragm.bitField.exponent, mant);
