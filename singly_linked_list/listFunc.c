@@ -1,15 +1,11 @@
 /*
-Simple implementation of singly linked list with some basic functions
+Simple implementation of singly linked list with some basic functions.
+Functional file.
 Author: Yumatov Vladimir, group 171
 */
+
 #include <stdio.h>
-
-struct li {
-    int data;
-    struct li* nextElm;
-};
-
-typedef struct li* sinList;
+#include "listFunc.h"
 
 void addElm(sinList *sl, int x) {
     if(*sl == NULL) {
@@ -71,34 +67,4 @@ void delList(sinList *sl) {
             free(first);
         }
     }
-}
-
-int main(void) {
-    sinList myList = NULL;
-    char command = ' ';
-    int num = 0;
-    while(1) {
-        scanf("%c", &command);
-        switch(command) {
-            case 'a': {
-                scanf("%d", &num);
-                addElm(&myList, num);
-                break;
-            }
-            case 'r': {
-                scanf("%d", &num);
-                delElm(&myList, num);
-                break;
-            }
-            case 'p': {
-                printList(myList);
-                break;
-            }
-            case 'q': {
-                delList(&myList);
-                return 0;
-            }
-        }
-    }
-    return 0;
 }
