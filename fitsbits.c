@@ -10,8 +10,9 @@ int isfits(int x, int wlen) {
 }
 
 int main(void) {
-    int num, len;
-    printf("%s", "Enter a number and length of word: \n");
+    int num = 0,
+        len = 0;
+    printf("Enter a number and length of word: \n");
     scanf("%d %d", &num, &len);
     printf("%d", isfits(num, len));
     return 0;

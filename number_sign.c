@@ -6,12 +6,13 @@
 #include <stdio.h>
 
 int sign(int n){
-return n >> 31;
+    return n >> 31;
 }
 
 int main(void) {
-    printf("%s", "Enter a number:\n");
-    int k;
+    printf("Enter a number:\n");
+    int k = 0;
     scanf("%d", &k);
     printf("%d", sign(k));
+    return 0;
 }
