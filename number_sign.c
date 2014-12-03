@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 int sign(int n){
-    return n >> 31;
+    return (n >> 31)|(!!n);
 }
 
 int main(void) {

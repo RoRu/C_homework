@@ -45,7 +45,7 @@ int main(void) {
     }
 
 
-    int sign = intf >> 31;
+    int sign = !!(intf >> 31);
 
     int exp = (intf >> 23) & 0xFF;
 
