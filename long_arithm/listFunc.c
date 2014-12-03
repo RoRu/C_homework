@@ -6,14 +6,24 @@ Author: Yumatov Vladimir, group 171
 #include <stdio.h>
 #include "listFunc.h"
 
+#define NOT_ENOUGH_MEMORY_RC 1
+
 void sl_addElm(sinList *sl, int x) {
     if(*sl == NULL) {
         *sl = (sinList)malloc(sizeof(struct li));
+        if (*sl == 0) {
+            printf("Not enough memory");
+            exit(NOT_ENOUGH_MEMORY_RC);
+        }
         (*sl)->data = x;
         (*sl)->nextElm = NULL;
     }
     else {
         sinList temp = (sinList)malloc(sizeof(struct li));
+        if (*sl == 0) {
+            printf("Not enough memory");
+            exit(NOT_ENOUGH_MEMORY_RC);
+        }
         temp->data = x;
         temp->nextElm = *sl;
         *sl = temp;
