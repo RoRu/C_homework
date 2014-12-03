@@ -2,7 +2,7 @@
 #define LISTFUNC_H
 
 struct li {
-        int data;
+    int data;
     struct li* nextElm;
 };
 
