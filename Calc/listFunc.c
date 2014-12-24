@@ -15,7 +15,7 @@ void sl_addElm(sinList *sl, int x) {
     }
     else {
         sinList temp = (sinList)malloc(sizeof(struct li));
-        if (*sl == 0) {
+        if (temp == 0) {
             printf("Not enough memory");
             exit(NOT_ENOUGH_MEMORY);
         }
@@ -58,6 +58,8 @@ void sl_reverse(sinList *res, sinList target) {
     }
 }
 
+
+
 void sl_revPrint(sinList sl) {
     if(sl == NULL) {
         return;
@@ -82,15 +84,10 @@ void sl_print(sinList sl) {
 }
 
 void sl_delList(sinList *sl) {
-    if(*sl == NULL) {
-        printf("Sorry, there is no list to delete :(\n");
-    }
-    else {
-        sinList first = *sl;
-        while((*sl) != NULL) {
-            first = *sl;
-            *sl = (*sl)->nextElm;
-            free(first);
-        }
+    sinList first = *sl;
+    while((*sl) != NULL) {
+        first = *sl;
+        *sl = (*sl)->nextElm;
+        free(first);
     }
 }
