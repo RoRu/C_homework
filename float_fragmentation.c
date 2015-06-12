@@ -53,7 +53,7 @@ int main(void) {
           t = 0.5;
     int i = 0;
     for(i = 22, t = 0.5; i >= 0; i--, t /= 2) {
-        frac += (intf >> i) & 1 * t;
+        frac += ((intf >> i) & 1) * t;
     }
     printf("%c%f * 2^%d", sign ? '-' : '+', frac, exp-127);
     return 0;
